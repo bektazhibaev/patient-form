@@ -2,27 +2,28 @@ import { useState } from "react";
 import "../css/Akciger.css";
 
 const Akciger = () => {
+  const [collectedData, setCollectedData] = useState([]);
 
-    const [collectedData, setCollectedData] = useState([])
+  const handleInput = (e) => {
+    const inputId = e.target.id ? e.target.id : e.target.name;
+    const inputValue = e.target.value ? e.target.value : null;
 
-    const handleInput = (e) => {
-        const kelgenID = e.target.id;
-        const value= e.target.value;
+    console.log("current value --->", inputValue);
+    console.log("current id --->", inputId);
 
-        let obj = {
-            kelgenID: value
-        }
+    let obj = {
+      inputIdName: inputId,
+      inputValue: inputValue,
+    };
 
-        const copyData = collectedData
+    let copyData = collectedData.concat(obj);
 
-        setCollectedData({
-            copyData, obj
-        })
-    }
+    setCollectedData(copyData);
+  };
 
-    console.log(collectedData)
+  console.log(collectedData);
 
-    return (
+  return (
     <form className="" action="" method="post">
       <img src="../img/logo.png" alt="cuLogo" style={{ float: "left" }} />
 
@@ -37,22 +38,32 @@ const Akciger = () => {
       >
         <th> Adı Soyadı </th>
         <th>
-          <input onChange={(e) => handleInput(e)} type="text" name="adsoyad" className="adsoyad" id="adsoyad" />
+          <input onChange={(e) => handleInput(e)}
+            type="text"
+            name="adsoyad"
+            className="adsoyad"
+            id="adsoyad"
+          />
         </th>
 
         <th> TC Kimlik Numarası </th>
         <th>
-          <input onChange={(e) => handleInput(e)} type="text" name="tc" className="text" id="tc" />
+          <input onChange={(e) => handleInput(e)}
+            type="text"
+            name="tc"
+            className="text"
+            id="tc"
+          />
         </th>
 
         <th> Tarih </th>
         <th>
-          <input type="date" name="Tarih" className="date" id="tarih" />
+          <input onChange={(e) => handleInput(e)} type="date" name="Tarih" className="date" id="tarih" />
         </th>
 
         <th> Tablo Numarası</th>
         <th>
-          <input
+          <input onChange={(e) => handleInput(e)}
             type="number"
             name="tabloNumarası"
             className="number"
@@ -87,111 +98,111 @@ const Akciger = () => {
           <tr>
             <th rowSpan="1"> 31) Ne kadar öksürdünüz?</th>
             <td>
-              <input type="radio" name="oksuruk" value="bir" /> 1
+              <input onChange={(e) => handleInput(e)} type="radio" name="oksuruk" value="bir" /> 1
             </td>
             <td>
-              <input type="radio" name="oksuruk" value="iki" /> 2
+              <input onChange={(e) => handleInput(e)} type="radio" name="oksuruk" value="iki" /> 2
             </td>
             <td>
-              <input type="radio" name="oksuruk" value="uc" /> 3
+              <input onChange={(e) => handleInput(e)} type="radio" name="oksuruk" value="uc" /> 3
             </td>
             <td>
-              <input type="radio" name="oksuruk" value="dort" /> 4
+              <input onChange={(e) => handleInput(e)} type="radio" name="oksuruk" value="dort" /> 4
             </td>
           </tr>
 
           <tr>
             <th rowSpan="1"> 32) Kanlı öksürüğünüz oldu mu?</th>
             <td>
-              <input type="radio" name="kanli" value="bir" /> 1
+              <input onChange={(e) => handleInput(e)} type="radio" name="kanli" value="bir" /> 1
             </td>
             <td>
-              <input type="radio" name="kanli" value="iki" /> 2
+              <input onChange={(e) => handleInput(e)} type="radio" name="kanli" value="iki" /> 2
             </td>
             <td>
-              <input type="radio" name="kanli" value="uc" /> 3
+              <input onChange={(e) => handleInput(e)} type="radio" name="kanli" value="uc" /> 3
             </td>
             <td>
-              <input type="radio" name="kanli" value="dort" /> 4
+              <input onChange={(e) => handleInput(e)} type="radio" name="kanli" value="dort" /> 4
             </td>
           </tr>
           <tr>
             <th rowSpan="1"> 33) Dinlenirken nefes darlığı oldu mu?</th>
             <td>
-              <input type="radio" name="dinlen" value="bir" /> 1
+              <input onChange={(e) => handleInput(e)} type="radio" name="dinlen" value="bir" /> 1
             </td>
             <td>
-              <input type="radio" name="dinlen" value="iki" /> 2
+              <input onChange={(e) => handleInput(e)} type="radio" name="dinlen" value="iki" /> 2
             </td>
             <td>
-              <input type="radio" name="dinlen" value="uc" /> 3
+              <input onChange={(e) => handleInput(e)} type="radio" name="dinlen" value="uc" /> 3
             </td>
             <td>
-              <input type="radio" name="dinlen" value="dort" /> 4
+              <input onChange={(e) => handleInput(e)} type="radio" name="dinlen" value="dort" /> 4
             </td>
           </tr>
 
           <tr>
             <th rowSpan="1"> 34) Yürürken nefes darlığı oldu mu</th>
             <td>
-              <input type="radio" name="yururken" value="bir" /> 1
+              <input onChange={(e) => handleInput(e)} type="radio" name="yururken" value="bir" /> 1
             </td>
             <td>
-              <input type="radio" name="yururken" value="iki" /> 2
+              <input onChange={(e) => handleInput(e)} type="radio" name="yururken" value="iki" /> 2
             </td>
             <td>
-              <input type="radio" name="yururken" value="uc" /> 3
+              <input onChange={(e) => handleInput(e)} type="radio" name="yururken" value="uc" /> 3
             </td>
             <td>
-              <input type="radio" name="yururken" value="dort" /> 4
+              <input onChange={(e) => handleInput(e)} type="radio" name="yururken" value="dort" /> 4
             </td>
           </tr>
 
           <tr>
             <th rowSpan="1"> 35) Merdiven çıkarken nefes darlığı oldu mu? </th>
             <td>
-              <input type="radio" name="merdiven" value="bir" /> 1
+              <input onChange={(e) => handleInput(e)} type="radio" name="merdiven" value="bir" /> 1
             </td>
             <td>
-              <input type="radio" name="merdiven" value="iki" /> 2
+              <input onChange={(e) => handleInput(e)} type="radio" name="merdiven" value="iki" /> 2
             </td>
             <td>
-              <input type="radio" name="merdiven" value="uc" /> 3
+              <input onChange={(e) => handleInput(e)} type="radio" name="merdiven" value="uc" /> 3
             </td>
             <td>
-              <input type="radio" name="merdiven" value="dort" /> 4
+              <input onChange={(e) => handleInput(e)} type="radio" name="merdiven" value="dort" /> 4
             </td>
           </tr>
 
           <tr>
             <th rowSpan="1">36) Ağzınızda veya dilinizde ağrı oldu mu? </th>
             <td>
-              <input type="radio" name="dil" value="bir" /> 1
+              <input onChange={(e) => handleInput(e)} type="radio" name="dil" value="bir" /> 1
             </td>
             <td>
-              <input type="radio" name="dil" value="iki" /> 2
+              <input onChange={(e) => handleInput(e)} type="radio" name="dil" value="iki" /> 2
             </td>
             <td>
-              <input type="radio" name="dil" value="uc" /> 3
+              <input onChange={(e) => handleInput(e)} type="radio" name="dil" value="uc" /> 3
             </td>
             <td>
-              <input type="radio" name="dil" value="dort" /> 4
+              <input onChange={(e) => handleInput(e)} type="radio" name="dil" value="dort" /> 4
             </td>
           </tr>
 
           <tr>
             <th rowSpan="1"> 37) Yutma güçlüğünüz oldu mu? </th>
             <td>
-              <input type="radio" name="yutma" value="bir" /> 1
+              <input onChange={(e) => handleInput(e)} type="radio" name="yutma" value="bir" /> 1
             </td>
             <td>
-              <input type="radio" name="yutma" value="iki" /> 2
+              <input onChange={(e) => handleInput(e)} type="radio" name="yutma" value="iki" /> 2
             </td>
             <td>
-              <input type="radio" name="yutma" value="uc" /> 3
+              <input onChange={(e) => handleInput(e)} type="radio" name="yutma" value="uc" /> 3
             </td>
             <td>
-              <input type="radio" name="yutma" value="dort" /> 4
+              <input onChange={(e) => handleInput(e)} type="radio" name="yutma" value="dort" /> 4
             </td>
           </tr>
 
@@ -200,105 +211,105 @@ const Akciger = () => {
               38) El ve ayaklarınızda karıncalanma veya uyuşma oldu mu?
             </th>
             <td>
-              <input type="radio" name="karıncalanma" value="bir" /> 1
+              <input onChange={(e) => handleInput(e)} type="radio" name="karıncalanma" value="bir" /> 1
             </td>
             <td>
-              <input type="radio" name="karıncalanma" value="iki" /> 2
+              <input onChange={(e) => handleInput(e)} type="radio" name="karıncalanma" value="iki" /> 2
             </td>
             <td>
-              <input type="radio" name="karıncalanma" value="uc" /> 3
+              <input onChange={(e) => handleInput(e)} type="radio" name="karıncalanma" value="uc" /> 3
             </td>
             <td>
-              <input type="radio" name="karıncalanma" value="dort" /> 4
+              <input onChange={(e) => handleInput(e)} type="radio" name="karıncalanma" value="dort" /> 4
             </td>
           </tr>
           <tr>
             <th rowSpan="1"> 39)Saçlarınızda dökülme oldu mu? </th>
             <td>
-              <input type="radio" name="sac" value="bir" /> 1
+              <input onChange={(e) => handleInput(e)} type="radio" name="sac" value="bir" /> 1
             </td>
             <td>
-              <input type="radio" name="sac" value="iki" /> 2
+              <input onChange={(e) => handleInput(e)} type="radio" name="sac" value="iki" /> 2
             </td>
             <td>
-              <input type="radio" name="sac" value="uc" /> 3
+              <input onChange={(e) => handleInput(e)} type="radio" name="sac" value="uc" /> 3
             </td>
             <td>
-              <input type="radio" name="sac" value="dort" /> 4
+              <input onChange={(e) => handleInput(e)} type="radio" name="sac" value="dort" /> 4
             </td>
           </tr>
           <tr>
             <th rowSpan="1"> 40) Göğüs kafesinizde ağrınız oldu mu? </th>
             <td>
-              <input type="radio" name="gogus" value="bir" /> 1
+              <input onChange={(e) => handleInput(e)} type="radio" name="gogus" value="bir" /> 1
             </td>
             <td>
-              <input type="radio" name="gogus" value="iki" /> 2
+              <input onChange={(e) => handleInput(e)} type="radio" name="gogus" value="iki" /> 2
             </td>
             <td>
-              <input type="radio" name="gogus" value="uc" /> 3
+              <input onChange={(e) => handleInput(e)} type="radio" name="gogus" value="uc" /> 3
             </td>
             <td>
-              <input type="radio" name="gogus" value="dort" /> 4
+              <input onChange={(e) => handleInput(e)} type="radio" name="gogus" value="dort" /> 4
             </td>
           </tr>
           <tr>
             <th rowSpan="1"> 41) Kol veya omzunuzda ağrınız oldu mu? </th>
             <td>
-              <input type="radio" name="kol" value="bir" /> 1
+              <input onChange={(e) => handleInput(e)} type="radio" name="kol" value="bir" /> 1
             </td>
             <td>
-              <input type="radio" name="kol" value="iki" /> 2
+              <input onChange={(e) => handleInput(e)} type="radio" name="kol" value="iki" /> 2
             </td>
             <td>
-              <input type="radio" name="kol" value="uc" /> 3
+              <input onChange={(e) => handleInput(e)} type="radio" name="kol" value="uc" /> 3
             </td>
             <td>
-              <input type="radio" name="kol" value="dort" /> 4
+              <input onChange={(e) => handleInput(e)} type="radio" name="kol" value="dort" /> 4
             </td>
           </tr>
           <tr>
             <th rowSpan="1">
               42)Vücudunuzun diğer kısımlarında ağrınız oldu mu?
-              <input type="text" name="agrı" placeholder="Ağrınız nerede?" />
+              <input onChange={(e) => handleInput(e)} type="text" name="agrı" placeholder="Ağrınız nerede?" />
             </th>
             <td>
-              <input type="radio" name="vucut" value="bir" /> 1
+              <input onChange={(e) => handleInput(e)} type="radio" name="vucut" value="bir" /> 1
             </td>
             <td>
-              <input type="radio" name="vucut" value="iki" /> 2
+              <input onChange={(e) => handleInput(e)} type="radio" name="vucut" value="iki" /> 2
             </td>
             <td>
-              <input type="radio" name="vucut" value="uc" /> 3
+              <input onChange={(e) => handleInput(e)} type="radio" name="vucut" value="uc" /> 3
             </td>
             <td>
-              <input type="radio" name="vucut" value="dort" /> 4
+              <input onChange={(e) => handleInput(e)} type="radio" name="vucut" value="dort" /> 4
             </td>
           </tr>
 
           <tr>
             <th rowSpan="1"> 43) Ağrı için hiç ilaç aldınız mı? </th>
             <td colSpan="2">
-              <input type="radio" name="ilac" value="Evet" /> Evet
+              <input onChange={(e) => handleInput(e)} type="radio" name="ilac" value="Evet" /> Evet
             </td>
             <td colSpan="2">
-              <input type="radio" name="ilac" value="Hayır" /> Hayır
+              <input onChange={(e) => handleInput(e)} type="radio" name="ilac" value="Hayır" /> Hayır
             </td>
           </tr>
 
           <tr>
             <th rowSpan="1"> 44) Evet ise, ilacın ne kadar faydası oldu? </th>
             <td>
-              <input type="radio" name="fayda" value="bir" /> 1
+              <input onChange={(e) => handleInput(e)} type="radio" name="fayda" value="bir" /> 1
             </td>
             <td>
-              <input type="radio" name="fayda" value="iki" /> 2
+              <input onChange={(e) => handleInput(e)} type="radio" name="fayda" value="iki" /> 2
             </td>
             <td>
-              <input type="radio" name="fayda" value="uc" /> 3
+              <input onChange={(e) => handleInput(e)} type="radio" name="fayda" value="uc" /> 3
             </td>
             <td>
-              <input type="radio" name="fayda" value="dort" /> 4
+              <input onChange={(e) => handleInput(e)} type="radio" name="fayda" value="dort" /> 4
             </td>
           </tr>
         </tbody>
@@ -308,7 +319,7 @@ const Akciger = () => {
         <tr>
           <th rowSpan="1"></th>
           <td>
-            <input
+            <input onChange={(e) => handleInput(e)}
               type="button"
               name="button"
               value="Kaydet"
