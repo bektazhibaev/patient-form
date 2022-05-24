@@ -1,0 +1,39 @@
+.bosluk{
+    padding-left: 10px;
+  }
+  td{
+    text-align: center;
+  }
+  th{
+    text-align: left;
+  }
+  thead{
+    text-align: left;
+  }
+  .tablee, .tableee{
+      margin-left: 150px;
+  }
+  .date{
+    width: 195px;
+    height: 23px;
+    font-size: 13px;
+    font-family: "Arial", Times, serif;
+  }
+  .buton{
+    width:200px;
+    height:35px;
+    margin-right: 190px;
+  }
+  .buton:hover{
+    background-color: #ECEFF1;
+  }
+  .table{
+    background-color: #f7f7ff;
+  }
+  .tablee td:hover{
+    background-color: #E6E6FA;
+  }
+  .tablee tr:nth-child(odd){
+    background-color: #f1f1f1;
+  }
+  
