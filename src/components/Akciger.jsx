@@ -17,6 +17,7 @@ const Akciger = () => {
     };
 
     let copyData = collectedData.concat(obj);
+    // const arr = [...existingStateArray, {id: 1, name: 'Baha'}]
 
     setCollectedData(copyData);
   };
