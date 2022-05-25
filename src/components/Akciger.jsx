@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../css/Akciger.css";
+import logo from '../img/logo.png'
 
 const Akciger = () => {
   const [collectedData, setCollectedData] = useState([]);
@@ -26,7 +27,7 @@ const Akciger = () => {
 
   return (
     <form className="" action="" method="post">
-      <img src="../img/logo.png" alt="cuLogo" style={{ float: "left" }} />
+      <img src={logo} alt="cuLogo" style={{ float: "left" }} />
 
       <h2 align="left">AKCİĞER HASTALIKLARINDA YAŞAM KALİTESİ</h2>
 

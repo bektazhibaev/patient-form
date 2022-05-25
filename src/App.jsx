@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import Akciger from './components/Akciger';
+import Basboyun from './components/Basboyun';
 
 class App extends React.Component {
   constructor() {
@@ -14,7 +15,8 @@ class App extends React.Component {
   render() {
     return(
       <div className="main">
-        <Akciger />
+        {/* <Akciger /> */}
+        <Basboyun />
       </div>
     )
   }
