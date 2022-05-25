@@ -1,0 +1,33 @@
+td{
+    text-align: center;
+}
+th{
+    text-align: left;
+}
+
+.table1{
+    margin-left: 150px;
+}
+.date{
+    width: 195px;
+    height: 23px;
+    font-size: 13px;
+    font-family: "Arial", Times, serif;
+}
+.button{
+    width:170px;
+    height:35px;
+    margin-left: 530px;
+}
+.buton:hover{
+    background-color: #ECEFF1;
+}
+.table{
+    background-color: #f7f7ff;
+}
+.table td:hover{
+    background-color: #E6E6FA;
+}
+.table1 tr:nth-child(odd){
+    background-color: #f1f1f1;
+}
